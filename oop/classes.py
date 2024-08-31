@@ -15,4 +15,5 @@ class Category:
 
 obj = Product('camera', 'for streaming', 15000, 'good')
 
+
 print(obj.price)
