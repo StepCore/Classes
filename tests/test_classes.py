@@ -10,7 +10,7 @@ def product_camera():
 
 @pytest.fixture()
 def category_video():
-    return Category("video", "record", "camera")
+    return Category("video", "record", "camera", 1, 5)
 
 
 @pytest.fixture()
@@ -20,7 +20,7 @@ def product_pc():
 
 @pytest.fixture()
 def category_gadget():
-    return Category("gadget", "digital", "pc")
+    return Category("gadget", "digital", "pc", 2, 3)
 
 
 def test_camera(product_camera):
@@ -34,6 +34,8 @@ def test_video(category_video):
     assert category_video.name == "video"
     assert category_video.description == "record"
     assert category_video.products == "camera"
+    assert category_video.category_count == 1
+    assert category_video.products_count == 5
 
 
 def test_pc(product_pc):
@@ -47,3 +49,5 @@ def test_gadget(category_gadget):
     assert category_gadget.name == "gadget"
     assert category_gadget.description == "digital"
     assert category_gadget.products == "pc"
+    assert category_gadget.category_count == 2
+    assert category_gadget.products_count == 3

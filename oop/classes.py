@@ -15,14 +15,18 @@ class Category:
     name: str
     description: str
     products: str
-    category_count: str
-    products_count: str
+    category_count: int
+    products_count: int
 
-    def __init__(self, name, description, products):
+    def __init__(self, name, description, products, category_count, products_count):
         self.name = name
         self.description = description
         self.products = products
+        self.category_count = category_count
+        self.products_count = products_count
 
 
-obj = Product("camera", "for streaming", 15000, "good")
-obj_2 = Product("pc", "for playing the game", 150000, "best")
+camera = Product("camera", "for streaming", 15000, "good")
+pc = Product("pc", "for playing the game", 150000, "best")
+gadget = Category("gadget", "digital", "pc", 2, 3)
+video = Category("video", "record", "camera", 1, 5)
