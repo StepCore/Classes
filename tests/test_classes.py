@@ -10,8 +10,13 @@ product3 = Product("Xiaomi Redmi Note 11", "1024GB, Синий", 31000.0, 14)
 product4 = Product('55" QLED 4K', "Фоновая подсветка", 123000.0, 7)
 
 new_product = Product.new_product(
-        {"name": "Samsung Galaxy S23 Ultra", "description": "256GB, Серый цвет, 200MP камера", "price": 180000.0,
-         "quantity": 5})
+    {
+        "name": "Samsung Galaxy S23 Ultra",
+        "description": "256GB, Серый цвет, 200MP камера",
+        "price": 180000.0,
+        "quantity": 5,
+    }
+)
 
 
 @pytest.fixture()

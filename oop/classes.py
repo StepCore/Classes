@@ -18,10 +18,10 @@ class Product:
 
     @classmethod
     def new_product(cls, product_data):
-        name = product_data.get('name')
-        description = product_data.get('description')
-        price = product_data.get('price')
-        quantity = product_data.get('quantity')
+        name = product_data.get("name")
+        description = product_data.get("description")
+        price = product_data.get("price")
+        quantity = product_data.get("quantity")
         return cls(name, description, price, quantity)
 
     def __repr__(self):
@@ -45,7 +45,9 @@ class Category:
 
     @property
     def product_list(self):
-        product_str = ''
+        product_str = ""
         for product in self.products:
-            product_str += f'{product.name}, {product.price}. Остаток: {product.quantity}.\n'
+            product_str += (
+                f"{product.name}, {product.price}. Остаток: {product.quantity}.\n"
+            )
         return product_str
