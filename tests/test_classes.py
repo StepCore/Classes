@@ -9,6 +9,10 @@ product2 = Product("Iphone 15", "512GB, Gray space", 210000.0, 8)
 product3 = Product("Xiaomi Redmi Note 11", "1024GB, Синий", 31000.0, 14)
 product4 = Product('55" QLED 4K', "Фоновая подсветка", 123000.0, 7)
 
+new_product = Product.new_product(
+        {"name": "Samsung Galaxy S23 Ultra", "description": "256GB, Серый цвет, 200MP камера", "price": 180000.0,
+         "quantity": 5})
+
 
 @pytest.fixture()
 def product_samsung():
@@ -70,3 +74,16 @@ def test_category_smart(category_smart):
         == "Смартфоны, как средство не только коммуникации, но и получения дополнительных функций для удобства жизни"
     )
     assert category_smart.products == [product1, product2, product3]
+
+
+def test_new_product():
+    new_product.price = 0
+    assert new_product.price == 180000
+    new_product.price = 12000
+    assert new_product.price == 12000
+
+
+def test_category(category_smart):
+    category_smart.add_product(product4)
+    category_smart.add_product(new_product)
+    assert Category.product_count == 9
