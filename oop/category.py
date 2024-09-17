@@ -1,4 +1,4 @@
-from product import Product
+from oop.product import Product
 
 
 class Category:

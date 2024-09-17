@@ -1,5 +1,3 @@
-import pytest
-
 from oop.product import Product
 
 product1 = Product(
