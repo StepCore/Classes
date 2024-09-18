@@ -6,7 +6,9 @@ from oop.category import Category
 
 @pytest.fixture
 def product_1():
-    return Product("Samsung Galaxy S23 Ultra", "256GB, Серый цвет, 200MP камера", 180000.0, 5)
+    return Product(
+        "Samsung Galaxy S23 Ultra", "256GB, Серый цвет, 200MP камера", 180000.0, 5
+    )
 
 
 @pytest.fixture
@@ -41,7 +43,7 @@ def category_tv(product_4):
     return Category(
         "Телевизоры",
         "Современный телевизор, который позволяет наслаждаться просмотром, станет вашим другом и помощником",
-        [product_4]
+        [product_4],
     )
 
 
@@ -62,3 +64,18 @@ def product_str_1(product_1):
 @pytest.fixture
 def product_str_2(product_2):
     return f"{product_2.name}, {product_2.price} руб. Остаток: {product_2.quantity} шт."
+
+
+@pytest.fixture
+def counter(product_1, product_2):
+    return product_1.price * product_1.quantity + product_2.price * product_2.quantity
+
+
+@pytest.fixture
+def counter_2(product_2, product_3):
+    return product_2.price * product_2.quantity + product_3.price * product_3.quantity
+
+
+@pytest.fixture
+def len_counter(category_smart):
+    return f"{category_smart.name}, {len(category_smart.products)} шт."
