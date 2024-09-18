@@ -52,3 +52,13 @@ def category_smart(product_1, product_2, product_3):
         "Смартфоны, как средство не только коммуникации, но и получения дополнительных функций для удобства жизни",
         [product_1, product_2, product_3],
     )
+
+
+@pytest.fixture
+def product_str_1(product_1):
+    return f"{product_1.name}, {product_1.price} руб. Остаток: {product_1.quantity} шт."
+
+
+@pytest.fixture
+def product_str_2(product_2):
+    return f"{product_2.name}, {product_2.price} руб. Остаток: {product_2.quantity} шт."

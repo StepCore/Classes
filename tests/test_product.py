@@ -1,12 +1,5 @@
 from oop.product import Product
 
-product1 = Product(
-    "Samsung Galaxy S23 Ultra", "256GB, Серый цвет, 200MP камера", 180000.0, 5
-)
-product2 = Product("Iphone 15", "512GB, Gray space", 210000.0, 8)
-product3 = Product("Xiaomi Redmi Note 11", "1024GB, Синий", 31000.0, 14)
-product4 = Product('55" QLED 4K', "Фоновая подсветка", 123000.0, 7)
-
 new_product = Product.new_product(
     {
         "name": "Samsung Galaxy S23 Ultra",
@@ -36,3 +29,8 @@ def test_new_product():
     assert new_product.price == 180000
     new_product.price = 12000
     assert new_product.price == 12000
+
+
+def test_new_str(product_str_1, product_str_2):
+    assert product_str_1 == 'Samsung Galaxy S23 Ultra, 180000.0 руб. Остаток: 5 шт.'
+    assert product_str_2 == 'Iphone 15, 210000.0 руб. Остаток: 8 шт.'
