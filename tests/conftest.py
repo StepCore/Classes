@@ -27,18 +27,6 @@ def product_4():
 
 
 @pytest.fixture
-def product_samsung():
-    return Product(
-        "Samsung Galaxy S23 Ultra", "256GB, Серый цвет, 200MP камера", 180000.0, 5
-    )
-
-
-@pytest.fixture
-def product_iphone():
-    return Product("Iphone 15", "512GB, Gray space", 210000.0, 8)
-
-
-@pytest.fixture
 def category_tv(product_4):
     return Category(
         "Телевизоры",
@@ -77,5 +65,5 @@ def counter_2(product_2, product_3):
 
 
 @pytest.fixture
-def len_counter(category_smart):
-    return f"{category_smart.name}, {len(category_smart.products)} шт."
+def sum_counter(category_smart):
+    return f"{category_smart.name}, {category_smart.products[0].quantity + category_smart.products[1].quantity + category_smart.products[2].quantity} шт."

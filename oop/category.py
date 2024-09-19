@@ -28,4 +28,7 @@ class Category:
         return product_str
 
     def __str__(self):
-        return f"{self.name}, {len(self.__products)} шт.\n"
+        counter = 0
+        for product in self.__products:
+            counter += product.quantity
+        return f"{self.name}, {counter} шт.\n"

@@ -35,5 +35,5 @@ def test_category(category_smart, product_4):
     assert Category.product_count == 9
 
 
-def test_len_counter(len_counter):
-    assert len_counter == "Смартфоны, 3 шт."
+def test_sum_counter(sum_counter):
+    assert sum_counter == "Смартфоны, 27 шт."

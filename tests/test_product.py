@@ -10,18 +10,18 @@ new_product = Product.new_product(
 )
 
 
-def test_samsung(product_samsung):
-    assert product_samsung.name == "Samsung Galaxy S23 Ultra"
-    assert product_samsung.description == "256GB, Серый цвет, 200MP камера"
-    assert product_samsung.price == 180000.0
-    assert product_samsung.quantity == 5
+def test_samsung(product_1):
+    assert product_1.name == "Samsung Galaxy S23 Ultra"
+    assert product_1.description == "256GB, Серый цвет, 200MP камера"
+    assert product_1.price == 180000.0
+    assert product_1.quantity == 5
 
 
-def test_iphone(product_iphone):
-    assert product_iphone.name == "Iphone 15"
-    assert product_iphone.description == "512GB, Gray space"
-    assert product_iphone.price == 210000.0
-    assert product_iphone.quantity == 8
+def test_iphone(product_2):
+    assert product_2.name == "Iphone 15"
+    assert product_2.description == "512GB, Gray space"
+    assert product_2.price == 210000.0
+    assert product_2.quantity == 8
 
 
 def test_new_product():
