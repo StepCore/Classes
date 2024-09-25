@@ -1,5 +1,5 @@
 import pytest
-from oop.product import Product, Smartphone, LawnGrass
+from oop.product import BaseProduct, Mixin, Product, Smartphone, LawnGrass
 
 new_product = Product.new_product(
     {
@@ -43,19 +43,19 @@ def test_counter(counter, counter_2, product_1, product_2, product_3):
 
 
 def test_parents():
-    assert issubclass(Smartphone, Product) == True
-    assert issubclass(LawnGrass, Product) == True
+    assert issubclass(Smartphone, Product) is True
+    assert issubclass(LawnGrass, Product) is True
 
 
 def test_belong_phone(samsung, iphone, xiaomi):
-    assert isinstance(samsung, Smartphone) == True
-    assert isinstance(iphone, Smartphone) == True
-    assert isinstance(xiaomi, Smartphone) == True
+    assert isinstance(samsung, Smartphone) is True
+    assert isinstance(iphone, Smartphone) is True
+    assert isinstance(xiaomi, Smartphone) is True
 
 
 def test_belong_grass(elit_grass, strong_grass):
-    assert isinstance(elit_grass, LawnGrass) == True
-    assert isinstance(strong_grass, LawnGrass) == True
+    assert isinstance(elit_grass, LawnGrass) is True
+    assert isinstance(strong_grass, LawnGrass) is True
 
 
 def test_error_type(category_smartphones, samsung, strong_grass):
@@ -69,3 +69,10 @@ def test_sum(samsung, iphone, elit_grass):
     assert samsung + iphone == 2580000
     with pytest.raises(TypeError):
         assert samsung + elit_grass == TypeError
+
+
+def test_classes():
+    assert Smartphone.__mro__[1:] == LawnGrass.__mro__[1:]
+    assert issubclass(Product, Mixin) is True
+    assert issubclass(Mixin, object) is True
+    assert issubclass(BaseProduct, object) is True
