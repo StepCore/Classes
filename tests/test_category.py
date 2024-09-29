@@ -1,3 +1,5 @@
+import pytest
+
 from oop.category import Category
 from oop.product import Product
 
@@ -37,3 +39,9 @@ def test_category(category_smart, product_4):
 
 def test_sum_counter(sum_counter):
     assert sum_counter == "Смартфоны, 27 шт."
+
+
+def test_middle_price(category_smart, category_smartphones, empty_category):
+    assert category_smart.middle_price() == 111629.63
+    assert category_smartphones.middle_price() == 198461.54
+    assert empty_category.middle_price() == 0
