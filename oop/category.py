@@ -2,7 +2,7 @@ from oop.product import Product
 
 
 class Category:
-    def __init__(self, name: str, description: str, products: list):
+    def __init__(self, name, description, products):
         self.name = name
         self.description = description
         self.__products = products if products else []
@@ -35,3 +35,16 @@ class Category:
         for product in self.__products:
             counter += product.quantity
         return f"{self.name}, {counter} шт.\n"
+
+    def middle_price(self):
+        counter = 0
+        sumer = 0
+        for product in self.__products:
+            counter += product.quantity
+        for product in self.__products:
+            sumer += product.quantity * product.price
+        try:
+            middle_price = sumer / counter
+        except ZeroDivisionError:
+            return 0
+        return round(middle_price, 2)
